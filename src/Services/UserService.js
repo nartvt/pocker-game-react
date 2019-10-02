@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import axios from 'axios';
+import restConnector from '.';
 
 export const userSignUpSchema = yup.object().shape({
   TaiKhoan: yup
@@ -26,7 +26,7 @@ export const userSignUpSchema = yup.object().shape({
 
 class UserService{
   signup(user) {
-    return axios({
+    return restConnector({
       method: 'POST',
       url: 'http://svcy2.myclass.vn/api/QuanLyNguoiDung/ThemNguoiDung',
       data: user
