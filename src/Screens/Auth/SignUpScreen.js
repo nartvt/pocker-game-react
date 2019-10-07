@@ -5,7 +5,7 @@ import UserService, { userSignUpSchema } from "../../Services/UserService";
 const SignUpScreen = () => {
   const _handleSubmit = value => {
     console.log(value);
-    const result = UserService.signup(value);
+    const result = UserService.signUp(value);
     result
       .then(res => {
         console.log(res);
@@ -28,7 +28,6 @@ const SignUpScreen = () => {
               Email: "",
               SoDT: "",
               MaNhom: "GP01",
-              MaLoaiNguoiDung: "KhachHang"
             }}
             validationSchema={userSignUpSchema}
             onSubmit={_handleSubmit}
@@ -51,10 +50,7 @@ const SignUpScreen = () => {
                 <div className="form-group">
                   <label>Mật Khẩu</label>
                   <Field
-                    type="password"
-                    name="MatKhau"
-                    onChange={handleChange}
-                    className="form-control"
+                    type="password" name="MatKhau"
                   />
                   {errors.MatKhau && touched.MatKhau && (
                     <p className="alert alert-danger">{errors.MatKhau}</p>

@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import restConnector from '.';
+import restConnector from './index';
 
 export const userSignUpSchema = yup.object().shape({
   TaiKhoan: yup
@@ -25,13 +25,22 @@ export const userSignUpSchema = yup.object().shape({
 });
 
 class UserService{
-  signup(user) {
+  signUp(user) {
     return restConnector({
       method: 'POST',
-      url: 'http://svcy2.myclass.vn/api/QuanLyNguoiDung/ThemNguoiDung',
+      url: 'http://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy',
       data: user
     });
   }
+  signIn(user){
+    return restConnector({
+      method: 'POST',
+      url:'http://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap',
+      data: user
+
+    });
+  }
 }
+
 export default new UserService();
 
