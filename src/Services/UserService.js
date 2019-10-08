@@ -39,6 +39,15 @@ class UserService{
       data: user
     });
   }
+  signIn(user){
+    return restConnector({
+      method: 'POST',
+      url:'http://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap',
+      data: user
+
+    });
+  }
 }
+
 export default new UserService();
 

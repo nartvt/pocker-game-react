@@ -15,7 +15,7 @@ const Layout = (props) => {
     let user = localStorage.getItem('userLogin');
 
     if (user) {
-      const userObj ``= JSON.parse(user);
+      const userObj = JSON.parse(user);
       props.dispatch(signInUser(JSON.parse(user)));
       restConnector.defaults.headers['Authorization'] = `Brearer ${userObj.accessToken}`;
     }
