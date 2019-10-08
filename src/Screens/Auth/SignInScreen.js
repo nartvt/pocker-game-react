@@ -1,19 +1,42 @@
-import React from 'react';
-
-const SignInScreen = () => {
-  return (
+import React,{useState} from 'react';
+import { connect } from 'react-redux';
+import {actLoginUser } from '../../Redux/Actions/UserAction';
+const SignInScreen = (props) => {
+  const [account, setAccount] = useState({
+    TaiKhoan: '',
+    MatKhau: ''
+  });
+  // if have multi state, every state assign a useState
+  const _handleChange = (event) => {
+    setAccount({
+      ...account,
+      [event.target.name]:event.target.value
+    })
+  }
+  const _handleSubmit = event => {
+    event.preventDefault();
+    props.dispatch(actLoginUser(account));
+  }
+    return (
     <div className="container">
       <div className="row">
         <div className="col-5 mx-auto">
-          <form>
+          <form onSubmit={_handleSubmit}>
             <h4 className="display-4">Đăng Nhập</h4>
             <div className="form-group">
               <label >Tài Khoản</label>
-              <input type="text" className="form-control" />
+                <input type="text"
+                  name='TaiKhoan'
+                  onChange={_handleChange}
+                className="form-control" />
             </div>
             <div className="form-group">
               <label >Mật Khẩu</label>
-              <input type="text" className="form-control" />
+                <input type="text"
+                  name='MatKhau'
+                  onChange={_handleChange}
+                  className="form-control"
+                />
             </div>
             <div className="form-group text-center">
               <button type="submit" className="btn btn-success">Đăng nhập</button>
@@ -26,4 +49,4 @@ const SignInScreen = () => {
   );
 };
 
-export default SignInScreen;
+export default connect()(SignInScreen);

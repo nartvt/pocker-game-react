@@ -15,8 +15,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 4. Render()
 5. didUpdate()
 
+# React Hook
+1. useState
+2. Axios
+3. Routing
+4. Game
 ## Available Scripts
-
+# 2019-09-29
+ 1. BrowserRoute, Route
+ 2. Switch
+ 3.  Link, NavLink
 In the project directory, you can run:
 
 ### `npm start`

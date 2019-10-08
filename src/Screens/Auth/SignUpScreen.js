@@ -21,85 +21,88 @@ const SignUpScreen = () => {
     <div className="container">
       <div className="row">
         <div className="col-5 mx-auto">
-          <Formik initialValue={{
-            TaiKhoan: '',
-            MatKhau: '',
-            Hoten: '',
-            Email: '',
-            SoDT: '',
-            MaNhom: 'GP01',
-            MaLoaiNguoiDung: 'KhachHang',
+          <Formik initialValues={{
+            taiKhoan: '',
+            matKhau: '',
+            hoten: '',
+            email: '',
+            soDT: '',
+            maNhom: 'GP01',
           }}
             validationSchema={userSignUpSchema}
             onSubmit={_handleSubmit}
             // render={(formikProps) => ( // {formikProps.handleChange}
-            render={({ handleChange, errors, touched }) => (
-              <Form>
-                <h4 className="display-4">Đăng Ký</h4>
-                <div className="form-group">
-                  <label >Tài Khoản</label>
-                  <Field type="text" name='TaiKhoan'
-                    onChange={handleChange}
-                    className="form-control" />
-                  {errors.TaiKhoan && touched.TaiKhoan && (
-                    <p className='alert alert-danger'>
-                      {errors.TaiKhoan}
-                    </p>
-                  )}
-                </div>
-                <div className="form-group">
-                  <label >Mật Khẩu</label>
-                  <Field type="password"
-                    name='MatKhau'
-                    onChange={handleChange}
-                    className="form-control" />
-                  {errors.MatKhau && touched.MatKhau && (
-                    <p className='alert alert-danger'>
-                      {errors.MatKhau}
-                    </p>
-                  )}
-                </div>
-                <div className="form-group">
-                  <label >Họ Tên: </label>
-                  <Field type="text"
-                    name='Hoten'
-                    onChange={handleChange}
-                    className="form-control" />
-                  {errors.Hoten && touched.Hoten && (
-                    <p className='alert alert-danger'>
-                      {errors.Hoten}
-                    </p>
-                  )}
-                </div>
-                <div className="form-group">
-                  <label >Email</label>
-                  <Field type="email"
-                    name='Email'
-                    onChange={handleChange}
-                    className="form-control" />
-                  {errors.Email && touched.Email && (
-                    <p className='alert alert-danger'>
-                      {errors.Email}
-                    </p>
-                  )}
-                </div>
-                <div className="form-group">
-                  <label >Số ĐT</label>
-                  <Field type="text"
-                    name='SoDT'
-                    onChange={handleChange}
-                    className="form-control" />
-                  {errors.SoDT && touched.SoDT && (
-                    <p className='alert alert-danger'>
-                      {errors.SoDT}
-                    </p>
-                  )}
-                </div>
-                <div className="form-group">
-                  <button className="btn btn-success" type="submit">Đăng Ký</button>
-                </div>
-              </Form>
-            )}
+            render={({ handleChange, errors, touched,values }) => {
+              
+              return (
+                <Form>
+                  <h4 className="display-4">Đăng Ký</h4>
+                  <div className="form-group">
+                    <label >Tài Khoản</label>
+                    <Field type="text" name='taiKhoan'
+                      onChange={handleChange}
+                      className="form-control"
+                    />
+                    {errors.taiKhoan && touched.taiKhoan && (
+                      <p className='alert alert-danger'>
+                        {errors.taiKhoan}
+                      </p>
+                    )}
+                  </div>
+                  <div className="form-group">
+                    <label >Mật Khẩu</label>
+                    <Field type="password"
+                      name='matKhau'
+                      onChange={handleChange}
+                      className="form-control" />
+                    {errors.matKhau && touched.matKhau && (
+                      <p className='alert alert-danger'>
+                        {errors.matKhau}
+                      </p>
+                    )}
+                  </div>
+                  <div className="form-group">
+                    <label >Họ Tên: </label>
+                    <Field type="text"
+                      name='hoten'
+                      onChange={handleChange}
+                      className="form-control" />
+                    {errors.hoten && touched.hoten && (
+                      <p className='alert alert-danger'>
+                        {errors.hoten}
+                      </p>
+                    )}
+                  </div>
+                  <div className="form-group">
+                    <label >email</label>
+                    <Field type="email"
+                      name='email'
+                      onChange={handleChange}
+                      className="form-control" />
+                    {errors.email && touched.email && (
+                      <p className='alert alert-danger'>
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
+                  <div className="form-group">
+                    <label >Số ĐT</label>
+                    <Field type="text"
+                      name='soDT'
+                      onChange={handleChange}
+                      className="form-control" />
+                    {errors.soDT && touched.soDT && (
+                      <p className='alert alert-danger'>
+                        {errors.soDT}
+                      </p>
+                    )}
+                  </div>
+                  <div className="form-group">
+                    <button className="btn btn-success" type="submit">Đăng Ký</button>
+                  </div>
+                </Form>
+              )
+            }}
           />
         </div>
       </div>

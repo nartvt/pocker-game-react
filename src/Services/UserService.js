@@ -1,24 +1,24 @@
 import * as yup from 'yup';
-import axios from 'axios';
+import restConnector from './index';
 
 export const userSignUpSchema = yup.object().shape({
-  TaiKhoan: yup
+  taiKhoan: yup
     .string()
     .required(),
-  MatKhau: yup
+  matKhau: yup
     .string()
     .required()
     .min(8)
     .max(16),
-  Hoten: yup
+  hoten: yup
     .string()
     .required()
     .matches(/^[a-zA-Z ]*$/),
-  Email: yup
+  email: yup
     .string()
     .required()
     .email(),
-  SoDT: yup
+  soDT: yup
     .string()
     .required()
     .matches(/^[0-9]*$/)
@@ -26,9 +26,16 @@ export const userSignUpSchema = yup.object().shape({
 
 class UserService{
   signup(user) {
-    return axios({
+    return restConnector({
       method: 'POST',
-      url: 'http://svcy2.myclass.vn/api/QuanLyNguoiDung/ThemNguoiDung',
+      url: 'http://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy',
+      data: user
+    });
+  }
+  signIn(user) {
+    return restConnector({
+      method: 'POST',
+      url: `http://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap`,
       data: user
     });
   }
