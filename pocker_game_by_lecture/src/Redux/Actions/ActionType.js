@@ -1,0 +1,5 @@
+export const FETCH_CREDENTIALS = "FETCH_CREDENTIALS";
+export const FETCH_ROOMS = "FETCH_ROOMS";
+export const FETCH_ROOM_DETAIL = "FETCH_ROOM_DETAIL";
+export const FETCH_DECK_CARD = "FETCH_DECK_CARD";
+export const DRAW_CARD = "DRAW_CARD";
