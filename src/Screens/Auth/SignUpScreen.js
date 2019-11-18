@@ -1,18 +1,19 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
+import {connect} from 'react-redux';
 import UserService, { userSignUpSchema } from "../../Services/UserService";
 
 const SignUpScreen = () => {
   const _handleSubmit = value => {
     console.log(value);
-    const result = UserService.signUp(value);
-    result
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    // const result = UserService.signUp(value);
+    // result
+    //   .then(res => {
+    //     console.log(res);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
     console.log("11111");
     console.log("22222");
   };
@@ -38,11 +39,8 @@ const SignUpScreen = () => {
                 <div className="form-group">
                   <label>Tài Khoản</label>
                   <Field
-                    type="text"
-                    name="TaiKhoan"
-                    onChange={handleChange}
-                    className="form-control"
-                  />
+                    type="text" name="TaiKhoan"
+                    onChange={handleChange} className="form-control" />
                   {errors.TaiKhoan && touched.TaiKhoan && (
                     <p className="alert alert-danger">{errors.TaiKhoan}</p>
                   )}
@@ -50,8 +48,7 @@ const SignUpScreen = () => {
                 <div className="form-group">
                   <label>Mật Khẩu</label>
                   <Field
-                    type="password" name="MatKhau"
-                  />
+                    type="password" name="MatKhau"/>
                   {errors.MatKhau && touched.MatKhau && (
                     <p className="alert alert-danger">{errors.MatKhau}</p>
                   )}
@@ -59,11 +56,8 @@ const SignUpScreen = () => {
                 <div className="form-group">
                   <label>Họ Tên: </label>
                   <Field
-                    type="text"
-                    name="Hoten"
-                    onChange={handleChange}
-                    className="form-control"
-                  />
+                    type="text" name="Hoten"
+                    onChange={handleChange} className="form-control" />
                   {errors.Hoten && touched.Hoten && (
                     <p className="alert alert-danger">{errors.Hoten}</p>
                   )}
@@ -71,11 +65,8 @@ const SignUpScreen = () => {
                 <div className="form-group">
                   <label>Email</label>
                   <Field
-                    type="email"
-                    name="Email"
-                    onChange={handleChange}
-                    className="form-control"
-                  />
+                    type="email" name="Email"
+                    onChange={handleChange} className="form-control" />
                   {errors.Email && touched.Email && (
                     <p className="alert alert-danger">{errors.Email}</p>
                   )}
@@ -83,11 +74,8 @@ const SignUpScreen = () => {
                 <div className="form-group">
                   <label>Số ĐT</label>
                   <Field
-                    type="text"
-                    name="SoDT"
-                    onChange={handleChange}
-                    className="form-control"
-                  />
+                    type="text" name="SoDT"
+                    onChange={handleChange} className="form-control" />
                   {errors.SoDT && touched.SoDT && (
                     <p className="alert alert-danger">{errors.SoDT}</p>
                   )}
@@ -106,4 +94,4 @@ const SignUpScreen = () => {
   );
 };
 
-export default SignUpScreen;
+export default connect() (SignUpScreen);

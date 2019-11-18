@@ -27,15 +27,11 @@ const SignInScreen = (props) => {
             <h4 className="display-4">Đăng Nhập</h4>
             <div className="form-group">
               <label >Tài Khoản</label>
-              <input type="text" 
-              onChange={_handleChange}
-              className="form-control" />
+              <input type="text"  onChange={_handleChange} className="form-control" />
             </div>
             <div className="form-group">
               <label >Mật Khẩu</label>
-              <input type="text" 
-              onChange={_handleChange}
-              className="form-control" />
+              <input type="text" onChange={_handleChange} className="form-control" />
             </div>
             <div className="form-group text-center">
               <button type="submit" className="btn btn-success">Đăng nhập</button>
