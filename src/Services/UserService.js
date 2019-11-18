@@ -2,33 +2,40 @@ import * as yup from 'yup';
 import restConnector from './index';
 
 export const userSignUpSchema = yup.object().shape({
-  TaiKhoan: yup
+  taiKhoan: yup
     .string()
     .required(),
-  MatKhau: yup
+  matKhau: yup
     .string()
     .required()
     .min(8)
     .max(16),
-  Hoten: yup
+  hoten: yup
     .string()
     .required()
     .matches(/^[a-zA-Z ]*$/),
-  Email: yup
+  email: yup
     .string()
     .required()
     .email(),
-  SoDT: yup
+  soDT: yup
     .string()
     .required()
     .matches(/^[0-9]*$/)
 });
 
 class UserService{
-  signUp(user) {
+  signup(user) {
     return restConnector({
       method: 'POST',
       url: 'http://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy',
+      data: user
+    });
+  }
+  signIn(user) {
+    return restConnector({
+      method: 'POST',
+      url: `http://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap`,
       data: user
     });
   }

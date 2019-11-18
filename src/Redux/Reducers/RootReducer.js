@@ -1,10 +1,11 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import UserReducer from './UserReducer';
-import RoomReducer from './RoomReducer';
-
-const RootReducer =  combineReducers({
-  user: UserReducer,
-  rooms: RoomReducer
-})
+import RoomReducer  from './RoomReduccer'
+const RootReducer = combineReducers(
+  {
+    user: UserReducer,// user: user
+    rooms: RoomReducer
+  }
+)
 
 export default RootReducer;

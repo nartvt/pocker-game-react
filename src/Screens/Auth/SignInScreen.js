@@ -1,25 +1,23 @@
-import React ,{useState} from 'react';
-import {connect} from 'react-redux';
-import {actLoginUser} from './../../Redux/Actions/UserAction';
+import React,{useState} from 'react';
+import { connect } from 'react-redux';
+import {actLoginUser } from '../../Redux/Actions/UserAction';
 const SignInScreen = (props) => {
-  const [account, setAccount]=useState({
+  const [account, setAccount] = useState({
     TaiKhoan: '',
     MatKhau: ''
   });
-  const _handleChange=(event)=>{
+  // if have multi state, every state assign a useState
+  const _handleChange = (event) => {
     setAccount({
       ...account,
       [event.target.name]:event.target.value
     })
-  };
-
-  // if have multi state, every state assign a useState
-  const _handleSubmit=(event)=>{
+  }
+  const _handleSubmit = event => {
     event.preventDefault();
     props.dispatch(actLoginUser(account));
   }
-
-  return (
+    return (
     <div className="container">
       <div className="row">
         <div className="col-5 mx-auto">

@@ -1,30 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# have two type lifecycle: creations, update
-# Creations 
-1. contructors()
-2. compenentWillMount()
-3. render()
-4. componentDidmount()
-5. willUnmounnt()
-
-# update
-1. willReceiProps()
-2. willUpdate()
-3. shuffUpdate()
-4. Render()
-5. didUpdate()
-
-# React Hook
-1. useState
-2. Axios
-3. Routing
-4. Game
 ## Available Scripts
-# 2019-09-29
- 1. BrowserRoute, Route
- 2. Switch
- 3.  Link, NavLink
+
 In the project directory, you can run:
 
 ### `npm start`

@@ -22,13 +22,13 @@ const SignUpScreen = () => {
       <div className="row">
         <div className="col-5 mx-auto">
           <Formik
-            initialValue={{
-              TaiKhoan: "",
-              MatKhau: "",
-              Hoten: "",
-              Email: "",
-              SoDT: "",
-              MaNhom: "GP01",
+            initialValues={{
+              taiKhoan: "",
+              matKhau: "",
+              hoten: "",
+              email: "",
+              soDT: "",
+              maNhom: "GP01"
             }}
             validationSchema={userSignUpSchema}
             onSubmit={_handleSubmit}
